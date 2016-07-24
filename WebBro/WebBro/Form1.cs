@@ -24,12 +24,18 @@ namespace WebBro
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoBack();
+            if (webBrowser1.CanGoBack)
+            {
+                webBrowser1.GoBack();
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoForward();
+            if (webBrowser1.CanGoForward)
+            {
+                webBrowser1.GoForward();
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -82,6 +88,11 @@ namespace WebBro
             {
 
             }
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
         }
     }
 }
